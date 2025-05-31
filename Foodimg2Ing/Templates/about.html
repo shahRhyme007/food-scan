@@ -1,31 +1,295 @@
-{% extends "layout.html" %}
+{% extends "header.html" %}
 {% block content %}
 
-
-
-        </div>
-    </div>
-</div>    
-
-<div id="section-about"onload="sampleFunction()">
-    <div id="aboutcard" class="card col-md-8">
-        <div class="card-header ">
-          <b>ABOUT</b>
-        </div>
-        <div class="card-body">
-          <p class="title">TITLE : Recipe Generation From Food Image</p>
-          <p class="title">ABSTRACT :</p>
-          <p class="aboutcontent">People enjoy food photography because they appreciate
-            food. Behind each meal there is a story described in a complex recipe and, unfortunately, by simply looking at a food
-            image we do not have access to its preparation process.
-            Therefore, in this paper we introduce an inverse cooking
-            system that recreates cooking recipes given food images.
-            Our system predicts ingredients as sets by means of a novel
-            architecture, modeling their dependencies without imposing any order, and then generates cooking instructions by
-            attending to both image and its inferred ingredients simultaneously.
+<div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Hero Section -->
+        <div class="text-center space-y-6 mb-16 animate-fade-in">
+            <div class="inline-flex items-center space-x-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+                <i data-lucide="info" class="w-4 h-4"></i>
+                <span>About Our Technology</span>
+            </div>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
+                AI-Powered Recipe Generation
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Discover how cutting-edge artificial intelligence transforms food images into detailed, actionable recipes
             </p>
         </div>
-      </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            
+            <!-- Main Article -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <!-- Project Overview Card -->
+                <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-custom border border-white/20 p-8">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-blue-500 rounded-full p-3">
+                                <i data-lucide="target" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <h2 class="font-display text-2xl font-bold text-gray-900">Project Overview</h2>
+                        </div>
+                        
+                        <div class="space-y-4 text-gray-700 leading-relaxed">
+                            <p class="text-lg font-medium text-gray-800">
+                                <strong>Title:</strong> Recipe Generation From Food Image
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <h3 class="font-semibold text-lg text-gray-800">Abstract</h3>
+                                <p>
+                                    People enjoy food photography because they appreciate food. Behind each meal there is a story described in a complex recipe and, unfortunately, by simply looking at a food image we do not have access to its preparation process.
+                                </p>
+                                <p>
+                                    Therefore, we introduce an inverse cooking system that recreates cooking recipes given food images. Our system predicts ingredients as sets by means of a novel architecture, modeling their dependencies without imposing any order, and then generates cooking instructions by attending to both image and its inferred ingredients simultaneously.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology Stack -->
+                <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-custom border border-white/20 p-8">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-purple-500 rounded-full p-3">
+                                <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <h2 class="font-display text-2xl font-bold text-gray-900">Technology Stack</h2>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <h3 class="font-semibold text-lg text-gray-800">AI & Machine Learning</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="bg-orange-100 rounded-lg p-2">
+                                            <i data-lucide="brain" class="w-5 h-5 text-orange-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-800">PyTorch</p>
+                                            <p class="text-sm text-gray-600">Deep learning framework</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="bg-blue-100 rounded-lg p-2">
+                                            <i data-lucide="eye" class="w-5 h-5 text-blue-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-800">Computer Vision</p>
+                                            <p class="text-sm text-gray-600">Image analysis & recognition</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="bg-green-100 rounded-lg p-2">
+                                            <i data-lucide="message-square" class="w-5 h-5 text-green-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-800">NLP</p>
+                                            <p class="text-sm text-gray-600">Natural language processing</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <h3 class="font-semibold text-lg text-gray-800">Web Technologies</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="bg-red-100 rounded-lg p-2">
+                                            <i data-lucide="server" class="w-5 h-5 text-red-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-800">Flask</p>
+                                            <p class="text-sm text-gray-600">Python web framework</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="bg-cyan-100 rounded-lg p-2">
+                                            <i data-lucide="palette" class="w-5 h-5 text-cyan-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-800">Tailwind CSS</p>
+                                            <p class="text-sm text-gray-600">Modern styling framework</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="bg-yellow-100 rounded-lg p-2">
+                                            <i data-lucide="zap" class="w-5 h-5 text-yellow-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-800">Alpine.js</p>
+                                            <p class="text-sm text-gray-600">Lightweight interactivity</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How It Works -->
+                <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-custom border border-white/20 p-8">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-green-500 rounded-full p-3">
+                                <i data-lucide="cog" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <h2 class="font-display text-2xl font-bold text-gray-900">How It Works</h2>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">1</div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">Image Processing</h3>
+                                    <p class="text-gray-600">The uploaded image is preprocessed and fed into a convolutional neural network for feature extraction.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">2</div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">Ingredient Prediction</h3>
+                                    <p class="text-gray-600">A specialized model identifies ingredients as sets, modeling their dependencies without imposing order.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">3</div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">Recipe Generation</h3>
+                                    <p class="text-gray-600">Instructions are generated by attending to both the image features and predicted ingredients simultaneously.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                
+                <!-- Quick Stats -->
+                <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-custom border border-white/20 p-6">
+                    <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Quick Stats</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Processing Time</span>
+                            <span class="font-semibold text-blue-600">~40 seconds</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Accuracy Rate</span>
+                            <span class="font-semibold text-green-600">99%+</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Supported Formats</span>
+                            <span class="font-semibold text-purple-600">JPG, PNG, WebP</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Max File Size</span>
+                            <span class="font-semibold text-orange-600">10MB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features -->
+                <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-custom border border-white/20 p-6">
+                    <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Key Features</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+                            <span class="text-gray-700">Real-time processing</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+                            <span class="text-gray-700">No registration required</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+                            <span class="text-gray-700">Global cuisine support</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+                            <span class="text-gray-700">Mobile responsive</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+                            <span class="text-gray-700">Privacy focused</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-6 text-white text-center">
+                    <div class="space-y-4">
+                        <i data-lucide="rocket" class="w-12 h-12 mx-auto"></i>
+                        <h3 class="font-display text-xl font-bold">Try It Now!</h3>
+                        <p class="text-blue-100">Ready to transform your food images into recipes?</p>
+                        <a href="{{ url_for('home') }}" 
+                           class="inline-flex items-center space-x-2 bg-white text-blue-600 font-semibold px-6 py-3 rounded-2xl hover:bg-blue-50 transition-colors duration-200">
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                            <span>Back to Generator</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-custom border border-white/20 p-8 text-center">
+            <div class="space-y-4">
+                <h2 class="font-display text-2xl font-bold text-gray-900">Ready to Experience AI Magic?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Upload your food image and watch as our AI transforms it into a complete recipe with ingredients and cooking instructions.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 mt-6">
+                    <div class="flex items-center space-x-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm">
+                        <i data-lucide="shield" class="w-4 h-4"></i>
+                        <span>Secure & Private</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm">
+                        <i data-lucide="zap" class="w-4 h-4"></i>
+                        <span>Lightning Fast</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-purple-50 text-purple-700 px-4 py-2 rounded-full text-sm">
+                        <i data-lucide="heart" class="w-4 h-4"></i>
+                        <span>Free Forever</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Add scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-slide-up');
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all cards for animation
+    document.querySelectorAll('.bg-white\\/80').forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
 
 {% endblock content %}

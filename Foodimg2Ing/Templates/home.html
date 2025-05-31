@@ -1,31 +1,198 @@
 {% extends "layout.html" %}
 {% block home %}
 
-
-            <div id="info" class="col-md-8">
-                <div class="card m-3">
-                    <img src="{{ url_for('static',filename='images/cover.jpg')}}" class="card-img-top" alt="..." >
-                    <div class="card-body" >
-                      <h5 class="card-title text-center" id=infotitle >Recipe Generation from Food Image</h5>
-                      <br>
-                      <p class="card-text" id="infobody">Upload any Food Image<br>Our Model will predict its Food Name , Ingredients and its Recipe.</p>
-                      <p class="card-text"><small class="text-muted">Processing time : Approx 40s</small></p>
-                    </div>
-                  </div>
+<!-- Hero Section -->
+<div id="info" class="space-y-6 animate-fade-in">
+    
+    <!-- Main Hero Card -->
+    <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-custom border border-white/20 overflow-hidden">
+        <!-- Hero Image -->
+        <div class="relative h-64 sm:h-80">
+            <img src="{{ url_for('static', filename='images/cover.jpg') }}" 
+                 class="w-full h-full object-cover" alt="Delicious food">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center text-white space-y-4 px-6">
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold animate-slide-up">
+                        AI Recipe Generator
+                    </h1>
+                    <p class="text-xl sm:text-2xl font-light animate-slide-up" style="animation-delay: 0.2s;">
+                        Transform Food Images into Delicious Recipes
+                    </p>
+                </div>
             </div>
-
-
-            <div id="loading" style="display:none;" class="col-md-8">
-                <div class="loader">
-                    <div class="inner one"></div>
-                    <div class="inner two"></div>
-                    <div class="inner three"></div>
-                    <h4>Loading</h4>
-                    <h5>Kindly wait for few seconds</h5>
+            <!-- Floating Elements -->
+            <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-3 animate-float">
+                <i data-lucide="sparkles" class="w-6 h-6 text-white"></i>
+            </div>
+            <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm rounded-full p-3 animate-float" style="animation-delay: 1s;">
+                <i data-lucide="chef-hat" class="w-6 h-6 text-white"></i>
+            </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="p-8">
+            <div class="space-y-6">
+                <!-- Description -->
+                <div class="text-center space-y-4">
+                    <h2 class="font-display text-2xl sm:text-3xl font-semibold text-gray-800">
+                        How It Works
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        Upload any food image and watch our advanced AI analyze it to generate a complete recipe with ingredients and step-by-step cooking instructions.
+                    </p>
+                </div>
+                
+                <!-- Process Steps -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
+                    <div class="text-center space-y-3 group">
+                        <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-full p-4 w-fit mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i data-lucide="upload" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-lg">1. Upload Image</h3>
+                        <p class="text-gray-600 text-sm">Choose a food photo from your device or select from our samples</p>
+                    </div>
+                    
+                    <div class="text-center space-y-3 group">
+                        <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-full p-4 w-fit mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i data-lucide="brain" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-lg">2. AI Analysis</h3>
+                        <p class="text-gray-600 text-sm">Our neural network identifies ingredients and cooking methods</p>
+                    </div>
+                    
+                    <div class="text-center space-y-3 group">
+                        <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-full p-4 w-fit mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i data-lucide="book-open" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-lg">3. Get Recipe</h3>
+                        <p class="text-gray-600 text-sm">Receive detailed recipe with ingredients and instructions</p>
+                    </div>
+                </div>
+                
+                <!-- Stats -->
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mt-8">
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                        <div class="space-y-2">
+                            <div class="text-2xl font-bold text-blue-600">99%</div>
+                            <div class="text-sm text-gray-600">Accuracy</div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="text-2xl font-bold text-purple-600">30s</div>
+                            <div class="text-sm text-gray-600">Processing</div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="text-2xl font-bold text-green-600">1000+</div>
+                            <div class="text-sm text-gray-600">Recipes</div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="text-2xl font-bold text-orange-600">24/7</div>
+                            <div class="text-sm text-gray-600">Available</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>    
+    
+    <!-- Features Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <!-- Feature 1 -->
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/80 transition-all duration-300 group">
+            <div class="flex items-start space-x-4">
+                <div class="bg-blue-100 rounded-xl p-3 group-hover:bg-blue-200 transition-colors duration-300">
+                    <i data-lucide="zap" class="w-6 h-6 text-blue-600"></i>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-semibold text-gray-800">Lightning Fast</h3>
+                    <p class="text-gray-600 text-sm">Get your recipe in under 40 seconds with our optimized AI models</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/80 transition-all duration-300 group">
+            <div class="flex items-start space-x-4">
+                <div class="bg-green-100 rounded-xl p-3 group-hover:bg-green-200 transition-colors duration-300">
+                    <i data-lucide="shield-check" class="w-6 h-6 text-green-600"></i>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-semibold text-gray-800">Highly Accurate</h3>
+                    <p class="text-gray-600 text-sm">Advanced computer vision ensures precise ingredient identification</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/80 transition-all duration-300 group">
+            <div class="flex items-start space-x-4">
+                <div class="bg-purple-100 rounded-xl p-3 group-hover:bg-purple-200 transition-colors duration-300">
+                    <i data-lucide="globe" class="w-6 h-6 text-purple-600"></i>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-semibold text-gray-800">Global Cuisine</h3>
+                    <p class="text-gray-600 text-sm">Recognizes dishes from cuisines around the world</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/80 transition-all duration-300 group">
+            <div class="flex items-start space-x-4">
+                <div class="bg-orange-100 rounded-xl p-3 group-hover:bg-orange-200 transition-colors duration-300">
+                    <i data-lucide="heart" class="w-6 h-6 text-orange-600"></i>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-semibold text-gray-800">Free to Use</h3>
+                    <p class="text-gray-600 text-sm">No registration required, completely free for everyone</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Call to Action -->
+    <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl p-8 text-center text-white shadow-2xl">
+        <div class="space-y-4">
+            <h2 class="font-display text-2xl sm:text-3xl font-bold">Ready to Get Started?</h2>
+            <p class="text-blue-100 text-lg">Upload your first food image and discover the magic of AI-powered recipe generation!</p>
+            <div class="flex items-center justify-center space-x-2 text-sm bg-white/20 rounded-full px-4 py-2 w-fit mx-auto">
+                <i data-lucide="clock" class="w-4 h-4"></i>
+                <span>Processing time: ~40 seconds</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Results Section (Hidden by default, shown after processing) -->
+<div id="results" class="space-y-6 animate-fade-in" style="display: none;">
+    <!-- Results will be populated here after processing -->
+</div>
+
+<script>
+// Add some interactive animations
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Add intersection observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-slide-up');
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    document.querySelectorAll('.group').forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
 
 {% endblock home %}

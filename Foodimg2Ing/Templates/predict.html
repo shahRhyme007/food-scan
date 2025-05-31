@@ -1,83 +1,212 @@
 {% extends "layout.html" %}
 {% block home %}
 
+<!-- Results Section -->
+<div id="info" class="space-y-6 animate-fade-in">
+    
+    <!-- Recipe Results Card -->
+    <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-custom border border-white/20 overflow-hidden">
+        
+        <!-- Header with Tabs -->
+        <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-6 text-white">
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="bg-white/20 rounded-full p-3">
+                    <i data-lucide="chef-hat" class="w-6 h-6"></i>
+                </div>
+                <h2 class="font-display text-2xl font-bold">AI Generated Recipe</h2>
+            </div>
+            
+            <!-- Tab Navigation -->
+            <div class="flex space-x-2" x-data="{ activeTab: 1 }">
+                <button @click="activeTab = 1; myFunctab1()" 
+                        :class="activeTab === 1 ? 'bg-white text-green-600' : 'bg-white/20 text-white hover:bg-white/30'"
+                        class="px-6 py-3 rounded-2xl font-semibold transition-all duration-300 flex items-center space-x-2">
+                    <i data-lucide="utensils" class="w-4 h-4"></i>
+                    <span>Recipe Option 1</span>
+                </button>
+                <button @click="activeTab = 2; myFunctab2()" 
+                        :class="activeTab === 2 ? 'bg-white text-green-600' : 'bg-white/20 text-white hover:bg-white/30'"
+                        class="px-6 py-3 rounded-2xl font-semibold transition-all duration-300 flex items-center space-x-2">
+                    <i data-lucide="utensils" class="w-4 h-4"></i>
+                    <span>Recipe Option 2</span>
+                </button>
+            </div>
+        </div>
 
-            <div id="info"  class="col-md-8">
-                <div class="card text-center pb-2">
-                    <div class="card-header">
-                      <ul class="nav nav-tabs card-header-tabs">
-                        <li class="nav-item">
-                          <a class="nav-link active " id="tabbtn1" href="#" onclick="javascript:myFunctab1()">Recipe 1</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link " id="tabbtn2" href="#" onclick="javascript:myFunctab2()">Recipe 2</a>
-                        </li>
-                      </ul>
+        <!-- Recipe Content -->
+        <div class="p-8">
+            
+            <!-- Recipe 1 -->
+            <div id="tab1" class="space-y-6">
+                {% if title[0] != "Not a valid recipe!" %}
+                    <!-- Recipe Title -->
+                    <div class="text-center space-y-2">
+                        <h1 class="font-display text-3xl sm:text-4xl font-bold text-gray-800">{{ title[0] }}</h1>
+                        <div class="flex items-center justify-center space-x-2 text-green-600">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                            <span class="font-medium">AI Generated Recipe</span>
+                        </div>
                     </div>
-                    <div id="tab1" >
-                      <div class="card-body" align="left" id="result">
-                        {% if title[0] != "Not a valid recipe!" %}
-                          <h5 class="card-title" align='center'>{{title[0]}}</h5>
-                          <br>
-                          <h6>Ingredients :</h6>
-                          <p class="card-text">{{', '.join(ingredients[0])}}</p>
-                          <br>
-                          <h6>Recipe :</h6>
-                          <ol class="pl-3">
-                          {% for i in recipe[0] %}
-                          <li class="card-text">{{i}}</li>
-                          {% endfor %}
-                          </ol>
 
-                        {% else %}
-                        <h5 class="card-title" align='center'>{{title[0]}}</h5>
-                        <br>
-                        <h6 class="card-text">{{recipe[0]}}</h6>
-                        {% endif %}
-                        <br>
-                        <p class="card-text"><small class="text-muted">Check both the Recipes</small></p>
-                      </div>
+                    <!-- Ingredients Section -->
+                    <div class="bg-orange-50 rounded-2xl p-6 border border-orange-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="bg-orange-500 rounded-full p-2">
+                                <i data-lucide="shopping-cart" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <h3 class="font-semibold text-xl text-gray-800">Ingredients</h3>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            {% for ingredient in ingredients[0] %}
+                            <div class="flex items-center space-x-3 bg-white rounded-xl p-3 shadow-sm">
+                                <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                                <span class="text-gray-700">{{ ingredient }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
 
-
-                    <div  id="tab2" style="display:None">
-                      <div class="card-body" align="left" id="result">
-                        {% if title[1] != "Not a valid recipe!" %}
-                          <h5 class="card-title" align='center'>{{title[1]}}</h5>
-                          <br>
-                          <h6>Ingredients :</h6>
-                          <p class="card-text">{{', '.join(ingredients[1])}}</p>
-                          <br>
-                          <h6>Recipe :</h6>
-                          <ol class="pl-3">
-                          {% for i in recipe[1] %}
-                          <li class="card-text">{{i}}</li>
-                          {% endfor %}
-                          </ol>
-
-                        {% else %}
-                        <h5 class="card-title" align='center'>{{title[1]}}</h5>
-                        <br>
-                        <h6 class="card-text">{{recipe[1]}}</h6>
-                        {% endif %}
-                      </div>
+                    <!-- Instructions Section -->
+                    <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="bg-blue-500 rounded-full p-2">
+                                <i data-lucide="book-open" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <h3 class="font-semibold text-xl text-gray-800">Cooking Instructions</h3>
+                        </div>
+                        <div class="space-y-4">
+                            {% for step in recipe[0] %}
+                            <div class="flex items-start space-x-4 bg-white rounded-xl p-4 shadow-sm">
+                                <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
+                                    {{ loop.index }}
+                                </div>
+                                <p class="text-gray-700 leading-relaxed">{{ step }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
-                    
-                  </div>
+
+                {% else %}
+                    <!-- Error State -->
+                    <div class="text-center space-y-4 py-12">
+                        <div class="bg-red-100 rounded-full p-6 w-fit mx-auto">
+                            <i data-lucide="alert-circle" class="w-12 h-12 text-red-500"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl text-gray-800">{{ title[0] }}</h3>
+                        <p class="text-gray-600">{{ recipe[0] }}</p>
+                    </div>
+                {% endif %}
+
+                <!-- Tip -->
+                <div class="bg-purple-50 rounded-2xl p-4 border border-purple-200">
+                    <div class="flex items-center space-x-2 text-purple-700">
+                        <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                        <span class="font-medium">Tip: Check both recipe options for the best results!</span>
+                    </div>
+                </div>
             </div>
 
-            <div id="loading" style="display:none;" class="col-md-8">
-              <div class="loader">
-                  <div class="inner one"></div>
-                  <div class="inner two"></div>
-                  <div class="inner three"></div>
-                  <h4>Loading</h4>
-                  <h5>Kindly wait for few seconds</h5>
-              </div>
-            </div>
+            <!-- Recipe 2 -->
+            <div id="tab2" class="space-y-6" style="display: none;">
+                {% if title[1] != "Not a valid recipe!" %}
+                    <!-- Recipe Title -->
+                    <div class="text-center space-y-2">
+                        <h1 class="font-display text-3xl sm:text-4xl font-bold text-gray-800">{{ title[1] }}</h1>
+                        <div class="flex items-center justify-center space-x-2 text-green-600">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                            <span class="font-medium">AI Generated Recipe</span>
+                        </div>
+                    </div>
 
+                    <!-- Ingredients Section -->
+                    <div class="bg-orange-50 rounded-2xl p-6 border border-orange-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="bg-orange-500 rounded-full p-2">
+                                <i data-lucide="shopping-cart" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <h3 class="font-semibold text-xl text-gray-800">Ingredients</h3>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            {% for ingredient in ingredients[1] %}
+                            <div class="flex items-center space-x-3 bg-white rounded-xl p-3 shadow-sm">
+                                <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                                <span class="text-gray-700">{{ ingredient }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Instructions Section -->
+                    <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="bg-blue-500 rounded-full p-2">
+                                <i data-lucide="book-open" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <h3 class="font-semibold text-xl text-gray-800">Cooking Instructions</h3>
+                        </div>
+                        <div class="space-y-4">
+                            {% for step in recipe[1] %}
+                            <div class="flex items-start space-x-4 bg-white rounded-xl p-4 shadow-sm">
+                                <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
+                                    {{ loop.index }}
+                                </div>
+                                <p class="text-gray-700 leading-relaxed">{{ step }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                {% else %}
+                    <!-- Error State -->
+                    <div class="text-center space-y-4 py-12">
+                        <div class="bg-red-100 rounded-full p-6 w-fit mx-auto">
+                            <i data-lucide="alert-circle" class="w-12 h-12 text-red-500"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl text-gray-800">{{ title[1] }}</h3>
+                        <p class="text-gray-600">{{ recipe[1] }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="bg-gray-50 px-8 py-6 border-t border-gray-200">
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="{{ url_for('home') }}" 
+                   class="inline-flex items-center space-x-2 bg-blue-500 text-white font-semibold px-6 py-3 rounded-2xl hover:bg-blue-600 transition-colors duration-200 shadow-lg">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>Try Another Image</span>
+                </a>
+                <button onclick="window.print()" 
+                        class="inline-flex items-center space-x-2 bg-green-500 text-white font-semibold px-6 py-3 rounded-2xl hover:bg-green-600 transition-colors duration-200 shadow-lg">
+                    <i data-lucide="printer" class="w-4 h-4"></i>
+                    <span>Print Recipe</span>
+                </button>
+                <button onclick="navigator.share({title: '{{ title[0] }}', text: 'Check out this AI-generated recipe!', url: window.location.href})" 
+                        class="inline-flex items-center space-x-2 bg-purple-500 text-white font-semibold px-6 py-3 rounded-2xl hover:bg-purple-600 transition-colors duration-200 shadow-lg">
+                    <i data-lucide="share-2" class="w-4 h-4"></i>
+                    <span>Share Recipe</span>
+                </button>
+            </div>
         </div>
     </div>
-</div>    
+
+    <!-- Success Message -->
+    <div class="bg-green-50 border border-green-200 rounded-2xl p-6 text-center">
+        <div class="flex items-center justify-center space-x-3 text-green-700">
+            <i data-lucide="check-circle" class="w-6 h-6"></i>
+            <span class="font-semibold">Recipe generated successfully! Enjoy cooking!</span>
+        </div>
+    </div>
+</div>
+
+<script>
+// Initialize icons when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+});
+</script>
 
 {% endblock home %}
