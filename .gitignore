@@ -1,0 +1,238 @@
+# ============================================================================
+# Recipe Generation from Food Images - .gitignore
+# ============================================================================
+
+# ============================================================================
+# LARGE MODEL FILES (Critical - these are huge!)
+# ============================================================================
+# Exclude the large pre-trained model files (396MB total)
+Foodimg2Ing/data/modelbest.ckpt
+Foodimg2Ing/data/ingr_vocab.pkl
+Foodimg2Ing/data/instr_vocab.pkl
+Foodimg2Ing/data/*.ckpt
+Foodimg2Ing/data/*.pkl
+Foodimg2Ing/data/*.pth
+Foodimg2Ing/data/*.pt
+
+# ============================================================================
+# USER UPLOADED CONTENT
+# ============================================================================
+# Exclude user-uploaded images (potentially sensitive/personal content)
+Foodimg2Ing/static/images/demo_imgs/
+Foodimg2Ing/static/images/demo_imgs/*
+# Keep the directory but ignore contents
+!Foodimg2Ing/static/images/demo_imgs/.gitkeep
+
+# ============================================================================
+# PYTHON ENVIRONMENT & CACHE
+# ============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.conda/
+
+# ============================================================================
+# JUPYTER NOTEBOOKS & DATA SCIENCE
+# ============================================================================
+.ipynb_checkpoints
+*.ipynb
+
+# ============================================================================
+# MACHINE LEARNING & AI SPECIFIC
+# ============================================================================
+# Model checkpoints and training artifacts
+*.h5
+*.hdf5
+*.model
+*.weights
+checkpoints/
+logs/
+runs/
+wandb/
+mlruns/
+
+# TensorBoard logs
+events.out.tfevents.*
+
+# ============================================================================
+# IDE & EDITOR FILES
+# ============================================================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ============================================================================
+# SYSTEM FILES
+# ============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================================
+# LOGS & TEMPORARY FILES
+# ============================================================================
+*.log
+*.out
+*.err
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Flask specific
+instance/
+.webassets-cache
+
+# ============================================================================
+# CONFIGURATION & SECRETS
+# ============================================================================
+# Environment variables and secrets
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+config.ini
+secrets.json
+*.key
+*.pem
+*.crt
+
+# ============================================================================
+# BACKUP FILES
+# ============================================================================
+*.bak
+*.backup
+*.old
+*.orig
+
+# ============================================================================
+# COMPRESSED FILES (potentially large)
+# ============================================================================
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ============================================================================
+# DOCUMENTATION BUILD
+# ============================================================================
+docs/_build/
+site/
+
+# ============================================================================
+# CUSTOM PROJECT EXCLUSIONS
+# ============================================================================
+# Add any project-specific files you want to exclude here
+# requirements_updated.txt  # Uncomment if you don't want to track this
+# requirements_simple.txt   # Uncomment if you don't want to track this

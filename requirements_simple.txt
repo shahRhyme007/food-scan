@@ -1,0 +1,21 @@
+# Simplified requirements for the Food Image to Recipe project
+# Core web framework
+Flask==2.3.3
+werkzeug==2.3.7
+
+# PyTorch for deep learning (compatible with Python 3.11)
+torch==2.1.0
+torchvision==0.16.0
+
+# Image processing
+Pillow==10.0.1
+
+# Scientific computing
+numpy==1.24.3
+matplotlib==3.8.0
+
+# Utilities
+tqdm==4.66.1
+
+# For deployment (optional)
+gunicorn==20.1.0 
